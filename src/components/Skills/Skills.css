@@ -1,0 +1,122 @@
+.skills-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.skills-category h3,
+.skills-services h3 {
+  margin-bottom: var(--space-4);
+  position: relative;
+  display: inline-block;
+}
+
+.skills-category h3:after,
+.skills-services h3:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--color-primary-500);
+}
+
+.skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.skill-bar {
+  width: 100%;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-1);
+}
+
+.skill-name {
+  font-weight: 500;
+}
+
+.skill-percentage {
+  color: var(--color-text-secondary);
+}
+
+.skill-progress-bg {
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.skill-progress-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-4);
+}
+
+.skill-card {
+  background-color: var(--color-bg-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: 0 4px 6px var(--color-shadow);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px var(--color-shadow);
+}
+
+.skill-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-2);
+  display: inline-block;
+  position: relative;
+}
+
+.skill-card h3 {
+  margin-bottom: var(--space-2);
+}
+
+.skill-card p {
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .skills-content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .skills-category,
+  .skills-services {
+    flex: 1;
+  }
+  
+  .service-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .service-cards {
+    grid-template-columns: 1fr;
+  }
+}
